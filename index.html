@@ -3,699 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferramentas Administrativas - Diretoria de Regulação em Saúde</title>
+    <title>DIRETORIA DE REGULAÇÃO/CEAPS/CMC CONTATOS TELEFÔNICOS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Reset e configurações básicas */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        body { font-family: 'Inter', sans-serif; }
+        .contact-card { 
+            transition: all 0.3s ease; 
+            border-left: 4px solid #e5e7eb; 
+            background-color: #9C4A6F !important;
         }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #ffffff;
+        .contact-card:hover { 
+            border-left-color: #7c3a59; 
+            transform: translateY(-2px); 
+            box-shadow: 0 10px 25px -5px rgba(156, 74, 111, 0.3); 
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .contact-card h3 {
+            color: #ffffff;
         }
-
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #8b2c5a 0%, #a53d6b 100%);
-            color: white;
-            padding: 2rem 0;
-            box-shadow: 0 4px 20px rgba(139, 44, 90, 0.3);
+        .contact-card p {
+            color: #f0e5eb;
         }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+        .contact-card p.text-blue-600 {
+            color: #dbeafe !important;
         }
-
-        .right-section {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            max-width: 500px;
-            text-align: right;
+        .contact-card p.text-green-600 {
+            color: #d1fae5 !important;
         }
-
-        .slogan p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            font-style: italic;
-            font-weight: 500;
-            margin-bottom: 0.25rem;
+        .contact-card p.text-gray-500 {
+            color: #e5d5dd !important;
         }
-
-        .signature p {
-            font-size: 0.7rem;
-            opacity: 0.8;
-            font-weight: 300;
-            line-height: 1.3;
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logo-section i {
-            font-size: 2.5rem;
-            color: #fbbf24;
-        }
-
-        .title-section h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .title-section p {
-            font-size: 0.95rem;
-            opacity: 0.95;
-            font-weight: 400;
-            margin-bottom: 0.15rem;
-        }
-
-        /* Main Content */
-        .main-content {
-            padding: 3rem 0;
-            min-height: calc(100vh - 200px);
-        }
-
-        /* Search Section */
-        .search-section {
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        .search-box {
-            position: relative;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .search-box i {
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #6b7280;
-            font-size: 1.1rem;
-        }
-
-        .search-box input {
-            width: 100%;
-            padding: 1rem 1rem 1rem 3rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 50px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: white;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .search-box input:focus {
-            outline: none;
-            border-color: #8b2c5a;
-            box-shadow: 0 4px 20px rgba(139, 44, 90, 0.3);
-        }
-
-        /* Categories Grid */
-        .categories-grid {
-            display: grid;
-            gap: 2.5rem;
-        }
-
-        .category-section {
-            background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-            border: 1px solid #f3f4f6;
-            transition: all 0.3s ease;
-        }
-
-        .category-section:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .category-title {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #8b2c5a;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 3px solid #e5e7eb;
-        }
-
-        .category-title i {
-            font-size: 1.75rem;
-            color: #a53d6b;
-        }
-
-        /* Links Grid */
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-        }
-
-        .link-button {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 1.25rem;
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            text-decoration: none;
-            color: #8b2c5a;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(139, 44, 90, 0.15);
-            min-height: 60px;
-        }
-
-        .link-button:hover {
-            background: #f8fafc;
-            border-color: #a53d6b;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(165, 61, 107, 0.3);
-            color: #8b2c5a;
-        }
-
-        .link-button:active {
-            transform: translateY(0);
-        }
-
-        .link-button i {
-            font-size: 1.25rem;
-            color: #a53d6b;
-            flex-shrink: 0;
-        }
-
-        .link-button span {
-            font-size: 0.95rem;
-            line-height: 1.4;
-        }
-
-        /* Estilo especial para o botão de Painéis Estratégicos */
-        .highlight-button {
-            box-shadow: 0 4px 15px rgba(139, 44, 90, 0.25);
-            background: linear-gradient(135deg, #ffffff 0%, #fdf2f8 100%);
-            border: 2px solid #f3e8ee;
-        }
-
-        .highlight-button:hover {
-            box-shadow: 0 8px 30px rgba(139, 44, 90, 0.35);
-            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
-        }
-
-        /* Footer */
-        .footer {
-            background: #f8fafc;
-            border-top: 1px solid #e5e7eb;
-            padding: 2rem 0;
-            text-align: center;
-            color: #6b7280;
-            margin-top: 3rem;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .right-section {
-                text-align: center;
-                max-width: none;
-                order: 2;
-            }
-            
-            .logo-section {
-                order: 1;
-                flex-direction: column;
-            }
-            
-            .title-section h1 {
-                font-size: 1.8rem;
-            }
-
-            .title-section p {
-                font-size: 0.85rem;
-            }
-            
-            .category-section {
-                padding: 1.5rem;
-            }
-            
-            .category-title {
-                font-size: 1.25rem;
-            }
-            
-            .links-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .link-button {
-                padding: 0.875rem 1rem;
-            }
-            
-            .link-button span {
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
-            
-            .header {
-                padding: 1.5rem 0;
-            }
-            
-            .title-section h1 {
-                font-size: 1.5rem;
-            }
-            
-            .main-content {
-                padding: 2rem 0;
-            }
-            
-            .category-section {
-                padding: 1.25rem;
-            }
-            
-            .search-box input {
-                padding: 0.875rem 0.875rem 0.875rem 2.5rem;
-            }
-        }
-
-        /* Animações */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .category-section {
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        /* Scrollbar personalizada */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
+        .bg-custom-header {
+            background-color: #9C4A6F;
         }
     </style>
 </head>
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo-section">
-                    <i class="fas fa-hospital"></i>
-                    <div class="title-section">
-                        <h1 class="main-title">Ferramentas Administrativas</h1>
-                        <p class="subtitle">Diretoria de Regulação em Saúde</p>
-                        <p class="subtitle">Central de Marcação de Consultas – Referência Enfermeira Giovanna</p>
-                        <p class="subtitle">Referência Administrativa Distrital/CMC Industrial - Magali Telefone - 3198-6773</p>
-                        <p class="subtitle">Página criada por Ana P. A.Silva Matric. 201704/ Assistente Adm. Ceaps</p>
-                    </div>
-                </div>
-                <div class="right-section">
-                    <div class="slogan">
-                        <p>"Nenhum de nós é tão bom quanto todos nós juntos!" </p>
-                    </div>
-                </div>
+<body class="bg-white min-h-screen">
+    <!-- Cabeçalho Padrão -->
+    <header class="bg-custom-header text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <!-- Conteúdo Central do Cabeçalho -->
+            <div class="text-center">
+                <h1 class="text-2xl md:text-3xl font-bold">
+                    <i class="fas fa-hospital-alt mr-2"></i>
+                    DIRETORIA DE REGULAÇÃO EM SAÚDE
+                </h1>
+                <p class="text-lg" style="color: #f0e5eb;">Contatos Telefônicos</p>
+                <p class="footer-credits">Página Criada por Ana P. A. Silva Matr:201704/Assistente Adm. Diretoria de Regulação em Saúde</p>
             </div>
         </div>
     </header>
 
-    <main class="main-content">
-        <div class="container">
-            <div class="search-section">
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="searchInput" placeholder="Buscar ferramenta...">
-                </div>
-            </div>
-
-           <div class="categories-grid">
-                
-                <!-- Painéis Estratégicos para Controle dos Fluxos: -->
-                <section class="category-section">
-                    <h2 class="category-title">
-                        <i class="fas fa-chart-line"></i>
-                        Painéis Estratégicos para Controle dos Fluxos:
-                    </h2>
-                    <div class="links-grid">
-                        <a href="https://regulacaocmcindustrial-code.github.io/pendenciasindustrial/" class="link-button highlight-button" target="_blank">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <span>Controle de Pendências 
-                                Distrito Industrial</span>
-                        </a>
-                    </div>
-                </section>
-
-                <!-- Consulta Especializada: -->
-                <section class="category-section">
-                    <h2 class="category-title">
-                        <i class="fas fa-stethoscope"></i>
-                        Consulta Especializada:
-                    </h2>
-                    <div class="links-grid">
-                        <a href="https://regulacaocmcvargem-tech.github.io/paginavargem/resumo_fluxos.html" class="link-button" target="_blank">
-                            <i class="fas fa-file-alt"></i>
-                            <span>Resumo dos Fluxos/Especialidades</span>
-                        </a>
-                        <a href="https://regulacaocmcvargem-tech.github.io/paginavargem/ESPECIALIDADES.html" class="link-button" target="_blank">
-                            <i class="fas fa-list-ul"></i>
-                            <span>Lista das Especialidades</span>
-                        </a>
-                        <a href="https://docs.google.com/spreadsheets/d/1rdG5GYB9tl57CUchHd_LMAO_qftSD_S4ySH5vernoTk/edit?gid=0#gid=0" class="link-button" target="_blank">
-                            <i class="fas fa-list-ul"></i>
-                            <span>Oferta Baixa Demanda</span>
-                        </a>
-                    </div>
-                </section>
-
-                <!-- Notas Técnicas -->
-                <section class="category-section">
-                    <h2 class="category-title">
-                        <i class="fas fa-stethoscope"></i>
-                        Notas Técnicas Central de Marcação de Consultas:
-                    </h2>
-                    <div class="links-grid">
-                        <a href="https://portal.contagem.mg.gov.br/nota-tecnica" class="link-button" target="_blank">
-                            <i class="fas fa-file-alt"></i>
-                            <span>Notas Técnicas Geral/Diretoria de Regulação</span>
-                        </a>
-                         <a href="https://portal.contagem.mg.gov.br/imgeditor/file/Regula%C3%A7%C3%A3o/Central%20de%20marca%C3%A7%C3%A3o/NT%2025%20-%202025%20-%20Regula%C3%A7%C3%A3o%20de%20Consultas%20Especializadas%20via%20sistema%20VIVVER.pdf" class="link-button" target="_blank">
-                            <i class="fas fa-list-ul"></i>
-                            <span>NT 25 - 2025 - Regulação de Consultas Especializadas via sistema VIVVER</span>
-                        </a>
-                        <a href="https://portal.contagem.mg.gov.br/imgeditor/file/Regula%C3%A7%C3%A3o/Central%20de%20marca%C3%A7%C3%A3o/NT%2026%20-%202025%20-%20Infertilidade%20Conjugal(1).pdf" class="link-button" target="_blank">
-                            <i class="fas fa-list-ul"></i>
-                            <span>NT 26 - 2025 - Infertilidade Conjugal</span>
-                        </a>
-                        <a href="https://portal.contagem.mg.gov.br/imgeditor/file/Regula%C3%A7%C3%A3o/Central%20de%20marca%C3%A7%C3%A3o/NT%2008%20-%202023%20-%20Crit%C3%A9rios%20de%20encaminhamento%20ao%20Amb%20endoc%20e%20obeso%20grave%20em%20BH(1).pdf" class="link-button" target="_blank">
-                            <i class="fas fa-list-ul"></i>
-                            <span>NT 08/2023 — Critérios de encaminhamento ao ambulatório de endocrinologia (obeso grave – BH) (PDF)</span>
-                        </a>
-                        <a href="https://portal.contagem.mg.gov.br/imgeditor/file/Regula%C3%A7%C3%A3o/Central%20de%20marca%C3%A7%C3%A3o/Formul%C3%A1rio%20para%20acompanhamento%20da%20obesidade.pdf" class="link-button" target="_blank">
-                            <i class="fas fa-list-ul"></i>
-                            <span>Formulário para acompanhamento da obesidade (PDF)</span>
-                        </a>
-                        <a href="https://portal.contagem.mg.gov.br/imgeditor/file/Regula%C3%A7%C3%A3o/Central%20de%20marca%C3%A7%C3%A3o/NT%2011%20-%202022%20-%20Aproveitamento%20de%20vagas%20de%20Consultas%20Especializadas.pdf" class="link-button" target="_blank">
-                            <i class="fas fa-list-ul"></i>
-                            <span>NT 11/2022 — Aproveitamento de vagas de Consultas Especializadas (PDF)</span>
-                        </a>
-                        <a href="https://portal.contagem.mg.gov.br/imgeditor/file/Regula%C3%A7%C3%A3o/Central%20de%20marca%C3%A7%C3%A3o/Ficha%20de%20encaminhamento%20para%20a%20Cl%C3%ADnica%20de%20Dor.pdf" class="link-button" target="_blank">
-                            <i class="fas fa-list-ul"></i>
-                            <span>Ficha de encaminhamento para a Clínica de Dor</span>
-                        </a>
-                    </div>
-                </section>
-
-                <!-- Telefones Úteis -->
-                <section class="category-section">
-                    <h2 class="category-title">
-                        <i class="fas fa-phone-alt"></i>
-                        Telefones Úteis:
-                    </h2>
-                    <div class="links-grid">
-                        <a href="https://regulacaocmcvargem-tech.github.io/paginavargem/CEAPS_TELEFONES.html" class="link-button" target="_blank">
-                            <i class="fas fa-phone-square"></i>
-                            <span>Telefones Diretoria de Regulação</span>
-                        </a>
-                        <a href="https://regulacaocmcvargem-tech.github.io/paginavargem/TELEFONES_IRIA_DINIZ.html" class="link-button" target="_blank">
-                            <i class="fas fa-phone-square"></i>
-                            <span>Telefones Iria Diniz</span>
-                        </a>
-                        <a href="https://regulacaocmcvargem-tech.github.io/paginavargem/TELEFONES_CCE_OUTROS.html" class="link-button" target="_blank">
-                            <i class="fas fa-phone-square"></i>
-                            <span>Telefones CCE´s e Outros</span>
-                        </a>
-                        <a href="https://regulacaocmcvargem-tech.github.io/paginavargem/TELEFONES_DIVERSOS.html" class="link-button" target="_blank">
-                            <i class="fas fa-phone-square"></i>
-                            <span>Telefones Diversos</span>
-                        </a>
-                        <a href="https://regulacaocmcvargem-tech.github.io/paginavargem/TELEFONES_UNIDADES_DE_CONTAGEM.html" class="link-button" target="_blank">
-                            <i class="fas fa-phone-square"></i>
-                            <span>Telefones – Todas as Unidades</span>
-                        </a>
-                        <a href="https://regulacaocmcvargem-tech.github.io/paginavargem/DISTRITOS_CONTATOS.html" class="link-button" target="_blank">
-                            <i class="fas fa-phone-square"></i>
-                            <span>Telefones Todos os Distritos</span>
-                        </a>
-                        <a href="https://regulacaocmcvargem-tech.github.io/paginavargem/UPA_TELEFONES.html" class="link-button" target="_blank">
-                            <i class="fas fa-phone-square"></i>
-                            <span>Telefones Upas</span>
-                        </a>
-                    </div>
-                </section>
-
-                <!-- Links Importantes -->
-                <section class="category-section">
-                    <h2 class="category-title">
-                        <i class="fas fa-link"></i>
-                        Links Importantes:
-                    </h2>
-                    <div class="links-grid">
-                        <a href="https://www.contagem-mg.vivver.com/desktop" class="link-button" target="_blank">
-                            <i class="fas fa-desktop"></i>
-                            <span>Sistema Vivver</span>
-                        </a>
-                        <a href="https://portal.contagem.mg.gov.br/" class="link-button" target="_blank">
-                            <i class="fas fa-building"></i>
-                            <span>Prefeitura de Contagem</span>
-                        </a>
-                        <a href="https://portal.contagem.mg.gov.br/secretaria-de-saude" class="link-button" target="_blank">
-                            <i class="fas fa-hospital"></i>
-                            <span>Portal da Secretaria de Saude Contagem</span>
-                        </a>
-                        <a href="https://portal.contagem.mg.gov.br/portal/paginas-dinamicas-categoria/15/" class="link-button" target="_blank">
-                            <i class="fas fa-user-tie"></i>
-                            <span>Portal do Servidor</span>
-                        </a>
-                        <a href="https://geoprocessamento.contagem.mg.gov.br/portal/apps/sites/#/geocontagem" class="link-button" target="_blank">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>Aplicativos /Contagem</span>
-                        </a>
-                        <a href="https://geoprocessamento.contagem.mg.gov.br/portal/apps/experiencebuilder/experience/?id=1cc51ed1bb7546e092ecad2935cc425d" class="link-button" target="_blank">
-                            <i class="fas fa-pills"></i>
-                            <span>Aqui tem /Remédio</span>
-                        </a>
-                        <a href="https://portal.contagem.mg.gov.br/atencao-primaria" class="link-button" target="_blank">
-                            <i class="fas fa-map-marked-alt"></i>
-                            <span>Endereço das /Unidades</span>
-                        </a>
-                        <a href="https://geoprocessamento.contagem.mg.gov.br/portal/apps/webappviewer/index.html?id=a29dd6c9d5944c51998c3ffa1efe0c70" class="link-button" target="_blank">
-                            <i class="fas fa-map-pin"></i>
-                            <span>Equipamentos da Saúde de Contagem</span>
-                        </a>
-                        <a href="https://cadastro.saude.gov.br/segcartao/?contextType=external&username=string&contextValue=%2Foam&password=sercure_string&challenge_url=https%3A%2F%2Fcadastro.saude.gov.br%2Fsegcartao&request_id=-8519814493389994660&authn_try_count=0&locale=es_ES&resource_url" class="link-button" target="_blank">
-                            <i class="fas fa-id-card"></i>
-                            <span>CadWeb</span>
-                        </a>
-                        <a href="https://cnesadm.datasus.gov.br/cnesadm/publico/usuarios/cadastro" class="link-button" target="_blank">
-                            <i class="fas fa-search"></i>
-                            <span>Pesquisa do CNS</span>
-                        </a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiYTRiZDcyZWYtMzAwNS00NmYyLTk3N2EtYWEwYTk2NTFhMmY1IiwidCI6ImFlODYzMzdlLTU3NWUtNDMzMC05NDc2LTkzZGU2ODJiMDAyMCJ9" class="link-button" target="_blank">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Pesquisa por endereço</span>
-                        </a>
-                        <a href="https://egestoraps.saude.gov.br/" class="link-button" target="_blank">
-                            <i class="fas fa-laptop"></i>
-                            <span>E gestor</span>
-                        </a>
-                        <a href="https://cnes.datasus.gov.br/pages/estabelecimentos/consulta.jsp" class="link-button" target="_blank">
-                            <i class="fas fa-database"></i>
-                            <span>Cnes</span>
-                        </a>
-                        <a href="http://sigtap.datasus.gov.br/tabela-unificada/app/sec/inicio.jsp" class="link-button" target="_blank">
-                            <i class="fas fa-table"></i>
-                            <span>Tabela Sigtap</span>
-                        </a>
-                        <a href="https://siscan.saude.gov.br/login.jsf" class="link-button" target="_blank">
-                            <i class="fas fa-ribbon"></i>
-                            <span>Siscan</span>
-                        </a>
-                        <a href="https://notifica.saude.gov.br/login" class="link-button" target="_blank">
-                            <i class="fas fa-bell"></i>
-                            <span>Esus Notifica</span>
-                        </a>
-                        <a href="https://crmmg.org.br/" class="link-button" target="_blank">
-                            <i class="fas fa-user-md"></i>
-                            <span>CRM</span>
-                        </a>
-                    </div>
-                </section>
-
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Departamentos Administrativos -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center"><i class="fas fa-building mr-3" style="color: #9C4A6F;"></i>Departamentos Administrativos:</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Guichê</h3><p class="text-blue-600 font-medium"><i class="fas fa-phone mr-2"></i>3198-6770</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Assessoria RH</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6776</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>patricia.miranda@contagem.mg.gov.br</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Diretoria Coordenação Adm.</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6751</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>fernanda.almeida@contagem.mg.gov.br</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Diretoria Adm</h3><p class="text-blue-600 font-medium"><i class="fas fa-phone mr-2"></i>3198-6776</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Recepção</h3><p class="text-blue-600 font-medium"><i class="fas fa-phone mr-2"></i>3198-6750</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Diretoria</h3><p class="text-blue-600 font-medium"><i class="fas fa-phone mr-2"></i>3198-6783</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Revisão Adm E Técnica</h3><p class="text-blue-600 font-medium"><i class="fas fa-phone mr-2"></i>3198-6781</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Faturamento - Aloísio</h3><p class="text-blue-600 font-medium"><i class="fas fa-phone mr-2"></i>3198-6778</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Cartão Sus</h3><p class="text-blue-600 font-medium"><i class="fas fa-phone mr-2"></i>3198-6780</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Supervisão Ambulatorial</h3><p class="text-blue-600 font-medium"><i class="fas fa-phone mr-2"></i>3198-6785</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Auditoria</h3><p class="text-blue-600 font-medium"><i class="fas fa-phone mr-2"></i>3198-6782</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Almoxerifado - Sr Marcos</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3138-6767</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>marcoreis.48@hotmail.com</p><p class="text-xs text-gray-500 mt-1">Telefone Uso Interno</p></div>
             </div>
         </div>
-    </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Diretoria de Regulação em Saúde/CMC. Todos os direitos reservados.</p>
+        <!-- Departamentos Médicos e Especializados -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center"><i class="fas fa-user-md mr-3" style="color: #9C4A6F;"></i>Departamentos Médicos e Especializados:</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Oncologia</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3199257-0767 / 3198-6757</p><p class="text-green-600 text-sm mb-1"><i class="fas fa-envelope mr-2"></i>neide.lizardo@contagem.mg.gov.br</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>marcilene.rodrigues@contagem.mg.gov.br</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Alto Custo</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6752 / 3198-6753</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>ceapsdr@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Cirurgia Eletiva</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6754 / 3198-6755</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>cecontagem@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Média Complexidade</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6759 / 3198-6760 / 3198-6777</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>colonoscopia.contagem@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Colonoscopia - Livia</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6788</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>colonoscopia.contagem@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Oftalmologia</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6761 / 3198-6762</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>oftalmologia.contagem@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Reabilitação</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6763</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>juntareguladora@contagem.mg.gov.br</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">TRS (Nefrologia) - Carlos</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6765</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>contagem.nefrologia@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Químico</h3><p class="text-blue-600 font-medium"><i class="fas fa-phone mr-2"></i>3198-6785</p></div>
+            </div>
         </div>
-    </footer>
 
-    <script>
-        // Funcionalidade de busca
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('searchInput');
-            const categorySection = document.querySelectorAll('.category-section');
-            const linkButtons = document.querySelectorAll('.link-button');
+        <!-- Serviços de Apoio -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center"><i class="fas fa-cogs mr-3" style="color: #9C4A6F;"></i>Serviços de Apoio:</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Malote</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6775</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>maloteceaps@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Serviço Social / TFD</h3><p class="text-blue-600 font-medium"><i class="fas fa-phone mr-2"></i>3198-6764</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">TFD</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6764</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>tfdfamuc@gmail.com</p></div>
+            </div>
+        </div>
 
-            // Função de busca
-            function performSearch(searchTerm) {
-                const term = searchTerm.toLowerCase().trim();
-                
-                if (term === '') {
-                    // Mostrar todas as seções e links
-                    categorySection.forEach(section => {
-                        section.style.display = 'block';
-                        const links = section.querySelectorAll('.link-button');
-                        links.forEach(link => {
-                            link.style.display = 'flex';
-                        });
-                    });
-                    return;
-                }
-
-                // Esconder todas as seções inicialmente
-                categorySection.forEach(section => {
-                    section.style.display = 'none';
-                });
-
-                // Buscar em links
-                linkButtons.forEach(link => {
-                    const linkText = link.textContent.toLowerCase();
-                    const parentSection = link.closest('.category-section');
-                    
-                    if (linkText.includes(term)) {
-                        link.style.display = 'flex';
-                        parentSection.style.display = 'block';
-                    } else {
-                        link.style.display = 'none';
-                    }
-                });
-
-                // Buscar em títulos de categoria
-                categorySection.forEach(section => {
-                    const categoryTitle = section.querySelector('.category-title').textContent.toLowerCase();
-                    if (categoryTitle.includes(term)) {
-                        section.style.display = 'block';
-                        const links = section.querySelectorAll('.link-button');
-                        links.forEach(link => {
-                            link.style.display = 'flex';
-                        });
-                    }
-                });
-
-                // Esconder seções vazias
-                categorySection.forEach(section => {
-                    const visibleLinks = section.querySelectorAll('.link-button[style*="flex"]');
-                    if (visibleLinks.length === 0 && !section.querySelector('.category-title').textContent.toLowerCase().includes(term)) {
-                        section.style.display = 'none';
-                    }
-                });
-            }
-
-            // Event listener para busca em tempo real
-            searchInput.addEventListener('input', function(e) {
-                performSearch(e.target.value);
-            });
-
-            // Limpar busca ao pressionar Escape
-            searchInput.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    searchInput.value = '';
-                    performSearch('');
-                    searchInput.blur();
-                }
-            });
-
-            // Animação de entrada para as seções
-            function animateOnScroll() {
-                const sections = document.querySelectorAll('.category-section');
-                
-                sections.forEach(section => {
-                    const sectionTop = section.getBoundingClientRect().top;
-                    const sectionVisible = 150;
-                    
-                    if (sectionTop < window.innerHeight - sectionVisible) {
-                        section.classList.add('animate-in');
-                    }
-                });
-            }
-
-            // Event listener para scroll
-            window.addEventListener('scroll', animateOnScroll);
-            
-            // Executar uma vez no carregamento
-            animateOnScroll();
-
-            // Feedback visual para cliques
-            linkButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 150);
-                });
-            });
-
-            console.log('Ferramentas Administrativas - Regulação em Saúde carregado com sucesso!');
-            console.log(`Total de links: ${linkButtons.length}`);
-            console.log(`Total de categorias: ${categorySection.length}`);
-        });
-    </script>
+        <!-- Centrais de Marcação -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center"><i class="fas fa-calendar-alt mr-3" style="color: #9C4A6F;"></i>CMC - Central de Marcação de Consultas:</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Referência do Setor - Enfermeira Giovanna</h3><p class="text-blue-600 font-medium"><i class="fas fa-phone mr-2"></i>3198-6774</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Páginas, Páinéis, Consolidados Adm. Ana</h3><p class="text-blue-600 font-medium"><i class="fas fa-phone mr-2"></i>3198-6774</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>compartilhacmc@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Belo Horizonte Enf. Erika, Adm. Eliane, Adm. Juliana</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6774</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>cmcbelohorizonte@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Distrito Eldorado Referência Adm. Cristina</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6768</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>cmceldorado@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Distrito Petrolândia Referência Adm. Erika</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6779</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>cmcpetrolandia@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Distrito Nacional Referência Adm. Daniela</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6766</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>cmcnacionalcontagem@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Distrito Industrial Referência Adm. Magali</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6773</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>cmcindustrialcontagem@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Distrito Riacho Referência Adm. Rosangêla</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6769</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>marcacaodistritoriacho@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Distrito Vargem das Flores Referência Adm. Carolina</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6758</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>cmcvargemdasflores@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Distrito Sede Referência Adm. Ariana</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6756</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>sedemarcacao@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">Distrito Ressaca Referência Adm. Graziele</h3><p class="text-blue-600 font-medium mb-2"><i class="fas fa-phone mr-2"></i>3198-6772</p><p class="text-green-600 text-sm"><i class="fas fa-envelope mr-2"></i>cmcressaca@gmail.com</p></div>
+                <div class="contact-card rounded-xl p-6"><h3 class="font-semibold mb-3">SAE / ITR - Adm. Natalia</h3><p class="text-blue-600 font-medium"><i class="fas fa-phone mr-2"></i>3198-6769</p></div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
+
+
+
 
 
 
